@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.Scanner;
 
 public class Menu {
     private final String prompt;
@@ -8,6 +9,12 @@ public class Menu {
     public Menu(String prompt, ArrayList<MenuItem> options) {
         this.prompt = prompt;
         this.options = options;
+    }
+
+    public void run() {
+        displayPrompt();
+        displayMenuItems();
+        this.mainLoop();
     }
 
     public String getPrompt() {
@@ -37,6 +44,20 @@ public class Menu {
         System.out.println(seperator);
         System.out.println("> " + internal);
         System.out.println(seperator);
+    }
+
+    private void mainLoop() {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            String input = scanner.nextLine().trim();
+            System.out.println(input);
+            boolean found = false;
+            Optional<MenuItem> menuItem = this.matchKey(input);
+            if (menuItem.isPresent()) {
+                menuItem.get().run();
+                break;
+            }
+        }
     }
 
     public void displayPrompt() {

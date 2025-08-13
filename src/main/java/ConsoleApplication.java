@@ -9,24 +9,7 @@ public class ConsoleApplication {
                 .setPrompt("Hello World!")
                 .build();
 
-        menu.displayPrompt();
-        menu.displayMenuItems();
+        menu.run();
 
-        mainLoop(menu);
-
-    }
-
-    private static void mainLoop(Menu menu) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            String input = scanner.nextLine().trim();
-            System.out.println(input);
-            boolean found = false;
-            Optional<MenuItem> menuItem = menu.matchKey(input);
-            if (menuItem.isPresent()) {
-                menuItem.get().run();
-                break;
-            }
-        }
     }
 }
