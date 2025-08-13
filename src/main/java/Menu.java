@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Menu {
-    private String prompt;
-    private ArrayList<MenuItem> options;
-    final int seperatorLength = 50;
+    private final String prompt;
+    private final ArrayList<MenuItem> options;
 
     public Menu(String prompt, ArrayList<MenuItem> options) {
         this.prompt = prompt;
@@ -15,9 +14,6 @@ public class Menu {
     public ArrayList<MenuItem> getOptions() {
         return options;
     }
-    public void addOption(MenuItem option) {
-        options.add(option);
-    }
     public void displayMenuItems() {
         for (MenuItem item : options) {
             System.out.println("\t" + item.toString());
@@ -25,7 +21,8 @@ public class Menu {
     }
 
     private void display(String internal) {
-        String seperator = "-".repeat(seperatorLength);
+        int separatorLength = 50;
+        String seperator = "-".repeat(separatorLength);
         System.out.println(seperator);
         System.out.println("> " + internal);
         System.out.println(seperator);

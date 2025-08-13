@@ -3,13 +3,19 @@ import java.util.ArrayList;
 public class ConsoleApplication {
     public static void run() {
         ArrayList<MenuItem> arr = new ArrayList<>();
-        arr.add(new MenuItem("1", "first", ConsoleApplication::temp));
-        arr.add(new MenuItem("2", "second", ConsoleApplication::temp));
-        Menu menu = new Menu("Testing", arr);
+
+        Menu menu = new MenuBuilder()
+                .addItem(new MenuItem("1", "first", ConsoleApplication::temp))
+                .addItem(new MenuItem("2", "second", ConsoleApplication::temp))
+                .setPrompt("Hello World!")
+                .build();
         menu.displayPrompt();
         menu.displayMenuItems();
     }
-    public static void temp() {
-        return;
-    }
+}
+
+//TODO: remove
+public static void temp() {
+    return;
+}
 }
