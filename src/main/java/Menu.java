@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Menu {
     private final String prompt;
@@ -8,6 +9,7 @@ public class Menu {
         this.prompt = prompt;
         this.options = options;
     }
+
     public String getPrompt() {
         return prompt;
     }
@@ -18,6 +20,15 @@ public class Menu {
         for (MenuItem item : options) {
             System.out.println("\t" + item.toString());
         }
+    }
+
+    public Optional<MenuItem> matchKey(String key) {
+        for (MenuItem item : options) {
+            if (item.getKey().equals(key)) {
+                return Optional.of(item);
+            }
+        }
+        return Optional.empty();
     }
 
     private void display(String internal) {
