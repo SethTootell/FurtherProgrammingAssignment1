@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 public class CSVParser {
-    HashMap<String, String[]> data;
+	HashMap<String, String[]> data;
 
     public CSVParser(File file) {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
