@@ -1,3 +1,5 @@
+package melbnb;
+
 public class MenuItem {
     final String key;
     final String label;
