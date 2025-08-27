@@ -1,6 +1,9 @@
-package melbnb;
+package melbnb.menu;
+
+import melbnb.property.Property;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 

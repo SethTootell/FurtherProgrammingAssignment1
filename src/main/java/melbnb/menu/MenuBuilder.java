@@ -1,4 +1,4 @@
-package melbnb;
+package melbnb.menu;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -22,9 +22,6 @@ public class MenuBuilder {
         return this;
     }
     public Menu build() throws MenuBuilderException {
-        if (!prompt.isPresent()) {
-            throw new MenuBuilderException("Please enter a prompt");
-        }
         if (menuItems.isEmpty()) {
             throw new MenuBuilderException("No items to display");
         }

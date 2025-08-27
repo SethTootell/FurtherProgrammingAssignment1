@@ -1,11 +1,11 @@
-package melbnb;
+package melbnb.menu;
 
 public class MenuItem {
     final String key;
     final String label;
     final Runnable action;
 
-    MenuItem(String key, String label, Runnable action) {
+    public MenuItem(String key, String label, Runnable action) {
         this.key = key;
         this.label = label;
         this.action = action;
