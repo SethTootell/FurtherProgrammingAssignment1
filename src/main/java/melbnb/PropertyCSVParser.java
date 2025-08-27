@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 /// CSVParser for properties
 public class PropertyCSVParser {
+    ArrayList<P>
 
     public PropertyCSVParser(File file) {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -18,4 +19,6 @@ public class PropertyCSVParser {
             e.printStackTrace();
         }
     }
+
+    private readLine()
 }
